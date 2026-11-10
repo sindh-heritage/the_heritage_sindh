@@ -1,0 +1,8 @@
+@keyframes drift{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-7px) rotate(1deg)}}
+@keyframes sunReveal{from{opacity:0;transform:translateX(-50%) translateY(80px)}to{opacity:.45;transform:translateX(-50%) translateY(0)}}
+@keyframes introReveal{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes wave{from{transform:translateX(-1%) rotate(-7deg)}to{transform:translateX(3%) rotate(-7deg)}}
+@keyframes sound{from{transform:scaleY(.3)}to{transform:scaleY(1)}}
+@media(prefers-reduced-motion:no-preference){body:not(.reduce-motion) .hero-intro{animation:introReveal 1.2s ease-out both}body:not(.reduce-motion) .sun-disc{animation:sunReveal 2.5s ease-out both}body:not(.reduce-motion) .hero-boat{animation:drift 7s ease-in-out infinite}body:not(.reduce-motion) .water-lines{animation:wave 8s ease-in-out infinite alternate}body:not(.reduce-motion) .sound-button[aria-pressed=true] .sound-bars i{animation:sound .8s ease-in-out infinite alternate}body:not(.reduce-motion) .sound-button[aria-pressed=true] .sound-bars i:nth-child(2){animation-delay:.3s}body:not(.reduce-motion) .sound-button[aria-pressed=true] .sound-bars i:nth-child(3){animation-delay:.6s}}
+.reduce-motion *,.reduce-motion *:before,.reduce-motion *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}html:has(.reduce-motion){scroll-behavior:auto}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}html{scroll-behavior:auto}}
