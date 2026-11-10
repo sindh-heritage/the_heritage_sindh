@@ -118,7 +118,7 @@
       const url = new URL(location.href); url.hash = '';
       if (location.protocol === 'file:' || ['localhost', '127.0.0.1'].includes(url.hostname)) { toast('Publish the site first to share a link that others can open.'); return; }
       if (navigator.share) {
-        try { await navigator.share({ title: 'Sindh — A Journey Through Time', text: 'Every scroll tells a story. Explore the heritage of Sindh.', url: url.href }); return; }
+        try { await navigator.share({ title: 'Muan Jo Daro — A Journey Through Ancient Sindh', text: 'Discover the city, its people, and the mysteries of Muan Jo Daro.', url: url.href }); return; }
         catch (error) { if (error.name === 'AbortError') return; }
       }
       try { await navigator.clipboard.writeText(url.href); toast('Journey link copied. Pass the story on!'); }

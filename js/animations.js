@@ -104,6 +104,11 @@
       layer(poetry[1], 0, (1-open)*25, 1, 1, (1-open)*-8);
       style(poetry[2], 'opacity', String(phase(p, .46, .75)));
       layer(poetry[3], Math.sin(p * Math.PI * 14) * .8);
+    } else if (flow.kind === 'history') {
+      flow.element.querySelectorAll('.history-layer').forEach((item, i) => {
+        const v = smooth(phase(p, i * .07, .3 + i * .07));
+        layer(item, 0, (1 - v) * 35, .96 + v * .04, .35 + .65 * v);
+      });
     } else if (flow.kind === 'crafts') {
       crafts.forEach((craft, i) => {
         const v = smooth(phase(p, i*.055, .18+i*.055));
@@ -194,6 +199,11 @@
       window.addEventListener('resize', () => { cancelAnimationFrame(resizeFrame); resizeFrame = requestAnimationFrame(tick); }, { passive: true });
       document.fonts?.ready.then(() => { if (usingGSAP) window.ScrollTrigger.refresh(); tick(); });
     },
-    refresh: setup, tick
+    refresh: setup,
+    reflow() {
+      if (usingGSAP) window.ScrollTrigger.refresh();
+      tick();
+    },
+    tick
   };
 })();

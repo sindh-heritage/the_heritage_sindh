@@ -1,6 +1,6 @@
-# Sindh — A Journey Through Time
+# Muan Jo Daro — A Journey Through Ancient Sindh
 
-A complete, mobile-first cultural exhibition in seven illustrated chapters. Plain HTML, CSS, and JavaScript; no installation, build, account, or backend required.
+A mobile-first cultural exhibition in 13 illustrated chapters, with Muan Jo Daro as the central story. Plain HTML, CSS, and JavaScript; no installation, build, account, or backend required.
 
 ## Preview locally
 
@@ -26,7 +26,7 @@ No repository was created or published automatically. These source files are rea
 
 Use the final HTTPS URL, not the local preview. Chrome's built-in **Create QR code** action can generate a static QR without a subscription. Alternatively, use a QR tool that encodes the URL directly; avoid expiring dynamic redirects. Download the QR image and add a short caption: **Scan to explore Sindh — every scroll tells a story.** Print with a white quiet zone and good contrast, roughly 4–5 cm wide or larger for a tabletop display.
 
-Test the actual print with the iPhone Camera app and an Android camera or Google Lens. Test with mobile data as well as Wi-Fi, in the exhibition lighting, and from a comfortable scanning distance. Confirm that all seven chapters and craft buttons work. There is deliberately no QR scanner inside this website.
+Test the actual print with the iPhone Camera app and an Android camera or Google Lens. Test with mobile data as well as Wi-Fi, in the exhibition lighting, and from a comfortable scanning distance. Confirm that all 13 chapters and craft buttons work. There is deliberately no QR scanner inside this website.
 
 ## Project structure
 
@@ -76,7 +76,7 @@ Before a formal exhibition, invite a Sindhi language teacher or local cultural e
 ## Quick verification checklist
 
 - Test at 320, 390, 768, and 1440 pixels wide; check for horizontal overflow.
-- Scroll forward and backward through seven chapters; use every chapter-menu link.
+- Scroll forward and backward through 13 chapters; use every chapter-menu link.
 - Use only the keyboard to open/close dialogs, change cultural tabs, and toggle audio.
 - Turn on the device's reduced-motion preference; also test the on-page toggle.
 - Tap all four objects and inspect their facts.
@@ -110,3 +110,27 @@ node --check js/interactions.js
 ```
 
 The Node checks cover boat-path bounds, forward/backward/fast scrolling, mobile and short viewport geometry, reduced-motion cleanup, and repeated GSAP setup/teardown using test doubles. They do not render a browser or prove browser compatibility. The Python check validates HTML nesting, inline SVG, references, and assets. Browser/device visual QA remains necessary; the authoring environment blocked local HTTP serving and file-URL browser previews.
+
+
+## Muan Jo Daro as the main story
+
+The first eight chapters introduce the city and explain its significance:
+1. Welcome to Muan Jo Daro (also spelled Mohenjo-daro / Moenjodaro).
+2. Its location near Larkana and place within the Indus Civilization.
+3. Planned homes and streets, with the existing interactive city scene.
+4. Wells, drainage, and daily water needs.
+5. The Great Bath: construction, clues, and uncertain purpose.
+6. People and objects: pottery, ornaments, toys, and weights.
+7. Archaeological excavation from 1922, undeciphered inscriptions, and questions about urban change.
+8. World Heritage recognition in 1980 and caring for fragile remains.
+
+The Indus River, Ajrak/Topi, poetry, living traditions, and the finale follow as a continuation into wider Sindh heritage. They do not assert uninterrupted practices from the Indus Civilization to the present. The QR URL and existing chapter anchors are unchanged.
+
+New chapters have layered inline SVG illustrations, reversible scroll reveals, and native HTML details for student questions. Figures are schematic or artistic; they are not site plans or artifact replicas. Reduced-motion and no-JavaScript modes retain the text and complete artwork.
+
+Additional references:
+- Great Bath construction: https://www.harappa.com/content/great-bath-mohenjo-daro-b
+- Indus inscriptions: https://www.harappa.com/content/inscribed-objects-harappa-excavations-1986-2007
+- Objects and daily life: https://www.nationalmuseumindia.gov.in/en/collections/index/6
+- Urban transformation: https://www.harappa.com/sites/default/files/pdf/kenoyer2003%20Scientific%20American.pdf
+- Conservation: https://whc.unesco.org/en/news/2669/

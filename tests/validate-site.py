@@ -28,7 +28,7 @@ class Structure(HTMLParser):
 s=(ROOT/'index.html').read_text();c=Structure();c.feed(s)
 assert not c.stack,c.stack
 assert len(c.ids)==len(set(c.ids)), 'Duplicate SVG or HTML IDs'
-assert c.chapters==['01','02','03','04','05','06','07']
+assert c.chapters==[f'{i:02d}' for i in range(1,14)]
 assert c.scenes==['city','river','cloth']
 assert c.classes['story-beat']==9
 assert c.classes['city-building']==16
@@ -41,4 +41,4 @@ for css in (ROOT/'css').glob('*.css'):
  text=css.read_text();assert text.count('{')==text.count('}'),css
  for item in re.findall(r"url\(['\"]?([^)'\"]+)",text):
   if not item.startswith('http'):assert (css.parent/item).exists(),item
-print('PASS: balanced HTML; SVG parsing and unique IDs; 7 chapters; 3 scenes; 9 beats; 16 buildings; 24 motifs; local assets and references.')
+print('PASS: balanced HTML; SVG parsing and unique IDs; 13 chapters; 3 scenes; 9 beats; 16 buildings; 24 motifs; local assets and references.')

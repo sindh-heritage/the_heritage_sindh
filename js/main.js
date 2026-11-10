@@ -4,6 +4,7 @@
   const systemMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let userReduced = false;
   try { userReduced = localStorage.getItem('sindh-reduce-motion') === 'true'; } catch {}
+  document.querySelector('#chapter-total').textContent = `/ ${chapters.length}`;
   let currentChapter = '';
   let scheduled = false;
 
@@ -59,6 +60,11 @@
     refreshMotionAtReadingPosition();
   });
   systemMotion.addEventListener('change', refreshMotionAtReadingPosition);
+  document.addEventListener('toggle', event => {
+    if (!event.target.matches('.history-discovery')) return;
+    window.SindhMotion.reflow();
+    queueUpdate();
+  }, true);
   window.addEventListener('scroll', queueUpdate, { passive: true });
   window.addEventListener('resize', queueUpdate, { passive: true });
   window.addEventListener('load', queueUpdate);
